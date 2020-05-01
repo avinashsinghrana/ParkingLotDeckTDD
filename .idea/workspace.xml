@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7467046-0335-49a0-b0f6-f07d209a5120" name="Default Changelist" comment="" />
+    <list default="true" id="1e3b287d-e3f9-4372-bdc6-0d0792d6c669" name="givenVehicle_whenUnparked_shouldReturnTrue" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotSystem.java" afterDir="false" />
+    </list>
+    <list id="d7467046-0335-49a0-b0f6-f07d209a5120" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/bridgelabz/parkingLot/ParkingLotSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +29,46 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bFlaGnaGhG27wOArEaIfiqBssd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bridgelabz.parkingLot" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -33,21 +82,139 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JUnit.ParkingLotSpec">
+    <configuration name="ParkingLotSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ParkingLotDesign.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParkingLotSpec.availableNoVehicle_UnParkedShouldReturnException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ParkingLotDesign.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
+      <option name="METHOD_NAME" value="availableNoVehicle_UnParkedShouldReturnException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParkingLotSpec.givenAVehicle_WhenAlreadyParked_ShouldReturnFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ParkingLotDesign.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
+      <option name="METHOD_NAME" value="givenAVehicle_WhenAlreadyParked_ShouldReturnFalse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParkingLotSpec.givenNoVehicle_ParkedShouldReturnException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ParkingLotDesign.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
+      <option name="METHOD_NAME" value="givenNoVehicle_ParkedShouldReturnException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParkingLotSpec.givenVehicle_whenUnParked_shouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ParkingLotDesign.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
+      <option name="METHOD_NAME" value="givenVehicle_whenUnParked_shouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ParkingLotSpec" />
+        <item itemvalue="JUnit.ParkingLotSpec.availableNoVehicle_UnParkedShouldReturnException" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenNoVehicle_ParkedShouldReturnException" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenAVehicle_WhenAlreadyParked_ShouldReturnFalse" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_whenUnParked_shouldReturnTrue" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
+      <branch name="master" repository="C:\Users\avina\Desktop\bridge-intellij\ParkingLotDesign" />
       <changelist id="d7467046-0335-49a0-b0f6-f07d209a5120" name="Default Changelist" comment="" />
       <created>1588235783341</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1588235783341</updated>
-      <workItem from="1588235788465" duration="206000" />
+      <updated>1588325472254</updated>
+      <workItem from="1588235788465" duration="2628000" />
+      <workItem from="1588324112563" duration="1325000" />
     </task>
+    <task active="true" id="LOCAL-00001" summary="givenVehicle_whenUnparked_shouldReturnTrue">
+      <branch name="master" repository="C:\Users\avina\Desktop\bridge-intellij\ParkingLotDesign" original="true" />
+      <branch name="givenVehicle_whenUnparked_shouldReturnTrue" repository="C:\Users\avina\Desktop\bridge-intellij\ParkingLotDesign" />
+      <changelist id="1e3b287d-e3f9-4372-bdc6-0d0792d6c669" name="givenVehicle_whenUnparked_shouldReturnTrue" comment="" />
+      <created>1588325461289</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588325472257</updated>
+      <workItem from="1588325472381" duration="3581000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <option name="clearContext" value="false" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
