@@ -11,4 +11,8 @@ public class ParkingLotSystem {
         boolean isCapacity = parkingLotOwner.isCapacityFull();
         return !isCapacity;
     }
+
+    public boolean unParked(Object vehicle) {
+        return parkingLotOwner.isVehicleAvailable();
+    }
 }

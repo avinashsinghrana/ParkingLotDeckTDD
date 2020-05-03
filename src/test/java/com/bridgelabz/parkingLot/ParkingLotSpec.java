@@ -20,4 +20,10 @@ public class ParkingLotSpec {
         boolean isParked = parkingLotSystem.park(vehicle);
         assertTrue(isParked);
     }
+
+    @Test
+    void givenVehicle_WhenUpParked_ShouldReturnTrue() {
+        boolean isUnParked = parkingLotSystem.unParked(vehicle);
+        assertTrue(isUnParked);
+    }
 }
