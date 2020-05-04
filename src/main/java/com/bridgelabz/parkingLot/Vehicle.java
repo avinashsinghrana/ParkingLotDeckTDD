@@ -8,7 +8,6 @@ public class Vehicle {
         this.vehicleType = vehicleType;
         this.vehicleNumber = vehicleNumber;
     }
-
     public Vehicle() { }
 
     public String getVehicleType() {

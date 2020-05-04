@@ -8,11 +8,12 @@ public class ParkingLotSystem {
     }
 
     public void setActualCapacity(int actualCapacity) {
+        this.actualCapacity = actualCapacity;
         parkingLotObserver.setActualCapacity(actualCapacity);
     }
 
     public boolean park(Vehicle vehicle) throws ParkingLotException {
-        boolean isCapacity = parkingLotObserver.isCapacityFull();
+        boolean isCapacity = parkingLotObserver.isCapacityNotFull();
         if(isCapacity)
         {
             parkingLotObserver.addVehicle(vehicle);
@@ -29,5 +30,11 @@ public class ParkingLotSystem {
             return true;
         }
         else throw new ParkingLotException("vehicle not parked yet");
+    }
+/*------------------------ SECURITY REDIRECT ---------------------------------------*/
+
+    public boolean canRedirectSecurityStaff() throws ParkingLotException {
+        if(!parkingLotObserver.isCapacityNotFull()) return true;
+        else throw new ParkingLotException("parkingLot is not full");
     }
 }

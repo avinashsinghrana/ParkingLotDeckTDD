@@ -38,8 +38,8 @@ public class ParkingLotObserver {
         }
     }
 
-    boolean isCapacityFull() {
-        return currentCapacity > 0 && currentCapacity <= actualCapacity;
+    boolean isCapacityNotFull() {
+        return currentCapacity>0 && currentCapacity <= actualCapacity;
     }
 
     boolean isVehicleAvailable(Vehicle vehicle) {
