@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3b287d-e3f9-4372-bdc6-0d0792d6c669" name="givenVehicle_whenUnparked_shouldReturnTrue" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotOwner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotOwner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/bridgelabz/parkingLot/ParkingLotSpec.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/bridgelabz/parkingLot/ParkingLotSpec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotOwner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/bridgelabz/parkingLot/ParkingLotSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bridgelabz/parkingLot/ParkingLotSpec.java" afterDir="false" />
     </list>
     <list id="d7467046-0335-49a0-b0f6-f07d209a5120" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,6 +34,9 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="190" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -25,7 +49,73 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="com.opencsv:opencsv:5.1" type="cfea851d:ExternalSystemViewDefaultContributor$LibraryDependencyDataExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="test" type="396b929e:GradleViewContributor$SourceSetNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="test" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -79,7 +169,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParkingLotSpec">
+  <component name="RunManager" selected="JUnit.ParkingLotSpec.givenVehicle_WhenParkingLotIsFull_ShouldThrowException">
     <configuration name="ParkingLotSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
@@ -95,7 +185,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParkingLotSpec.givenVehicle_WhenParked_ShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParkingLotSpec.givenVehicle_WhenParkingLotIsFull_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
         <pattern>
@@ -105,7 +195,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenVehicle_WhenParked_ShouldReturnTrue" />
+      <option name="METHOD_NAME" value="givenVehicle_WhenParkingLotIsFull_ShouldThrowException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParkingLotSpec.givenVehicle_WhenUnParked_ShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ParkingLotDesign.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
+      <option name="METHOD_NAME" value="givenVehicle_WhenUnParked_ShouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParkingLotSpec.givenVehicle_WhenUpParked_ShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ParkingLotDesign.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
+      <option name="METHOD_NAME" value="givenVehicle_WhenUpParked_ShouldReturnTrue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,45 +249,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParkingLotSpec.givenVehicle_whenUnParked_shouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ParkingLotDesign.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
-      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenVehicle_whenUnParked_shouldReturnTrue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParkingLotSpec.givenWhenParkingLotIsFull_ShouldInformTheOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ParkingLotDesign.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bridgelabz.parkingLot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
-      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenWhenParkingLotIsFull_ShouldInformTheOwner" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenParkingLotIsFull_ShouldThrowException" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenUnParked_ShouldReturnTrue" />
         <item itemvalue="JUnit.ParkingLotSpec" />
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_whenParked_ShouldReturnTrue" />
-        <item itemvalue="JUnit.ParkingLotSpec.givenWhenParkingLotIsFull_ShouldInformTheOwner" />
-        <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenParked_ShouldReturnTrue" />
-        <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_whenUnParked_shouldReturnTrue" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenUpParked_ShouldReturnTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +284,8 @@
       <updated>1588325472257</updated>
       <workItem from="1588325472381" duration="4905000" />
       <workItem from="1588383220885" duration="5906000" />
-      <workItem from="1588426623060" duration="5407000" />
+      <workItem from="1588426623060" duration="10299000" />
+      <workItem from="1588525153790" duration="12315000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />
@@ -215,5 +306,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ParkingLotDesign$ParkingLotSpec.ic" NAME="ParkingLotSpec Coverage Results" MODIFIED="1588530726876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bridgelabz.parkingLot.*</FILTER>
+    </SUITE>
   </component>
 </project>

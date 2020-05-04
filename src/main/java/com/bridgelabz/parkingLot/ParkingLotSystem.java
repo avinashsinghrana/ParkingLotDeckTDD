@@ -1,18 +1,33 @@
 package com.bridgelabz.parkingLot;
 
 public class ParkingLotSystem {
-    private ParkingLotOwner parkingLotOwner;
-
+    private ParkingLotObserver parkingLotObserver;
+    private int actualCapacity;
     public ParkingLotSystem() {
-        this.parkingLotOwner = new ParkingLotOwner();
+        parkingLotObserver = new ParkingLotObserver();
     }
 
-    public boolean park(Object vehicle) {
-        boolean isCapacity = parkingLotOwner.isCapacityFull();
-        return !isCapacity;
+    public void setActualCapacity(int actualCapacity) {
+        parkingLotObserver.setActualCapacity(actualCapacity);
     }
 
-    public boolean unParked(Object vehicle) {
-        return parkingLotOwner.isVehicleAvailable();
+    public boolean park(Vehicle vehicle) throws ParkingLotException {
+        boolean isCapacity = parkingLotObserver.isCapacityFull();
+        if(isCapacity)
+        {
+            parkingLotObserver.addVehicle(vehicle);
+            return true;
+        }
+        else throw new ParkingLotException("parkingLot is full");
+    }
+/*------------------------ UN-PARKED CASE ---------------------------------------*/
+
+    public boolean unParked(Vehicle vehicle) throws ParkingLotException {
+        boolean isAvailable = parkingLotObserver.isVehicleAvailable(vehicle);
+        if(isAvailable){
+            parkingLotObserver.removeVehicle(vehicle);
+            return true;
+        }
+        else throw new ParkingLotException("vehicle not parked yet");
     }
 }
