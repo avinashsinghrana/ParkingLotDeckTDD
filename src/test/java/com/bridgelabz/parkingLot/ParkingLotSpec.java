@@ -50,11 +50,22 @@ class ParkingLotSpec {
     }
 
     @Test
+    void givenVehicles_WhenSameVehicleFound_ShouldThrowException() {
+        parkingLotSystem.setActualCapacity(2);
+        try{
+            parkingLotSystem.park(new Vehicle("hero","MP05F0014"));
+            parkingLotSystem.park(new Vehicle("hero","MP05F0014"));
+        }catch (ParkingLotException e){
+            assertEquals("vehicle already parked", e.getMessage());
+        }
+    }
+
+    @Test
     void givenVehicles_WhenParkingLotIsFull_ShouldReturnTrueToRedirectSecurityStaff() {
         parkingLotSystem.setActualCapacity(2);
         try{
             parkingLotSystem.park(new Vehicle("suzuki","MP06S0045"));
-            parkingLotSystem.park(new Vehicle("suzuki","MP06S0045"));
+            parkingLotSystem.park(new Vehicle("suzuki","MP06L0045"));
             boolean canRedirectSecurityStaff = parkingLotSystem.canRedirectSecurityStaff();
             assertTrue(canRedirectSecurityStaff);
         }catch (ParkingLotException e){
@@ -70,7 +81,7 @@ class ParkingLotSpec {
             parkingLotSystem.park(new Vehicle("honda","MP04B4544",8.15,10.45));
             parkingLotSystem.park(new Vehicle("HERO","MP04B9999",8.45,15.58));
             parkingLotSystem.park(new Vehicle("YAMAHA","BR09B4854",9.32,16.52));
-            parkingLotSystem.park(new Vehicle("YAMAHA","BR09B4854",9.32,16.52));
+            parkingLotSystem.park(new Vehicle("YAMAHA","BR09L8854",9.32,16.52));
         }catch (ParkingLotException e){
             assertEquals(1.04,parkingLotSystem.timeTakenToSpaceAgain(),0.1);
         }
