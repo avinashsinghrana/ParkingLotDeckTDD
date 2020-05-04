@@ -253,8 +253,8 @@
       <list>
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenParkingLotIsFull_ShouldThrowException" />
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenUnParked_ShouldReturnTrue" />
-        <item itemvalue="JUnit.ParkingLotSpec" />
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_whenParked_ShouldReturnTrue" />
+        <item itemvalue="JUnit.ParkingLotSpec" />
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenUpParked_ShouldReturnTrue" />
       </list>
     </recent_temporary>
@@ -285,7 +285,7 @@
       <workItem from="1588325472381" duration="4905000" />
       <workItem from="1588383220885" duration="5906000" />
       <workItem from="1588426623060" duration="10299000" />
-      <workItem from="1588525153790" duration="12315000" />
+      <workItem from="1588525153790" duration="18347000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />
