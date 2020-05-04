@@ -47,4 +47,8 @@ public class ParkingLotSystem {
             return parkingLotObserver.timeLeftToSpaceAgain();
         else throw new ParkingLotException("parkingLot is not full");
     }
+
+    public boolean isVehicleAvailable(Vehicle vehicle) {
+        return parkingLotObserver.isVehicleAvailable(vehicle);
+    }
 }

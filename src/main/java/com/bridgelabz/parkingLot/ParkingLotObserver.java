@@ -18,7 +18,7 @@ public class ParkingLotObserver {
     void setCurrentTime(double currentTime) {
         this.currentTime = currentTime;
     }
-    /*------------------------------ VEHICLE DATA -------------------------------------*/
+/*------------------------------ VEHICLE DATA -------------------------------------*/
 
     void addVehicle(Vehicle vehicle){
        if(listOfVehicle.size() < actualCapacity){

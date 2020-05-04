@@ -111,4 +111,15 @@ class ParkingLotSpec {
             e.printStackTrace();
         }
     }
+
+    @Test
+    void givenVehicleDetail_WhenMatched_UnParkedVehicle_ShouldReturnTrue() {
+        parkingLotSystem.setActualCapacity(2);
+        try{
+            parkingLotSystem.park(new Vehicle(Vehicle.VehicleType.CAR,"SCORPIO","BA02P9856",6.15,14.25));
+            parkingLotSystem.park(new Vehicle(Vehicle.VehicleType.CAR,"TOYOTA","MP01UT985",12.00,23.25));
+            boolean isVehicleAvailable = parkingLotSystem.isVehicleAvailable(new Vehicle(Vehicle.VehicleType.CAR, "SCORPIO", "BA02P9856"));
+            assertTrue(isVehicleAvailable);
+        }catch (ParkingLotException e){ e.printStackTrace(); }
+    }
 }
