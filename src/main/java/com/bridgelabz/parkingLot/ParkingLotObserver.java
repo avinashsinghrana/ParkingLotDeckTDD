@@ -6,16 +6,20 @@ import java.util.List;
 public class ParkingLotObserver {
     private int actualCapacity;
     private int currentCapacity;
+    private double currentTime;
     private List<Vehicle> listOfVehicle = new ArrayList<>();
 
-/*------------------------------ CONSTRUCTOR --------------------------------------*/
+    /*------------------------------ CONSTRUCTOR --------------------------------------*/
 
-    public void setActualCapacity(int value) {
+    void setActualCapacity(int value) {
         this.currentCapacity = value;
         this.actualCapacity = value;
     }
 
-/*------------------------------ VEHICLE DATA -------------------------------------*/
+    public void setCurrentTime(double currentTime) {
+        this.currentTime = currentTime;
+    }
+    /*------------------------------ VEHICLE DATA -------------------------------------*/
 
     void addVehicle(Vehicle vehicle){
        if(listOfVehicle.size() < actualCapacity){
@@ -51,5 +55,15 @@ public class ParkingLotObserver {
             count++;
         }
         return index >= 0;
+    }
+
+    public double timeLeftToSpaceAgain() {
+        double nearestTime = listOfVehicle.get(0).getEndTime();
+        for(Vehicle vehicleData : listOfVehicle){
+            if(nearestTime > vehicleData.getEndTime()){
+                nearestTime = vehicleData.getEndTime();
+            }
+        }
+        return nearestTime - currentTime;
     }
 }

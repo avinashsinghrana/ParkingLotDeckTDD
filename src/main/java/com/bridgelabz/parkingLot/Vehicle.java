@@ -3,19 +3,23 @@ package com.bridgelabz.parkingLot;
 public class Vehicle {
     private String vehicleType;
     private String vehicleNumber;
+    private double startTime;
+    private double endTime;
 
     public Vehicle(String vehicleType, String vehicleNumber) {
         this.vehicleType = vehicleType;
         this.vehicleNumber = vehicleNumber;
     }
-    public Vehicle() { }
 
-    public String getVehicleType() {
-        return vehicleType;
+    public Vehicle(String vehicleType, String vehicleNumber, double startTime, double endTime) {
+        this.vehicleType = vehicleType;
+        this.vehicleNumber = vehicleNumber;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
-    public String getVehicleNumber() {
-        return vehicleNumber;
+    public double getEndTime() {
+        return endTime;
     }
 
     @Override

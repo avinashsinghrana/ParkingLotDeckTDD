@@ -2,14 +2,16 @@ package com.bridgelabz.parkingLot;
 
 public class ParkingLotSystem {
     private ParkingLotObserver parkingLotObserver;
-    private int actualCapacity;
     public ParkingLotSystem() {
         parkingLotObserver = new ParkingLotObserver();
     }
 
     public void setActualCapacity(int actualCapacity) {
-        this.actualCapacity = actualCapacity;
         parkingLotObserver.setActualCapacity(actualCapacity);
+    }
+
+    public void setCurrentTime(double currentTime){
+        parkingLotObserver.setCurrentTime(currentTime);
     }
 
     public boolean park(Vehicle vehicle) throws ParkingLotException {
@@ -35,6 +37,12 @@ public class ParkingLotSystem {
 
     public boolean canRedirectSecurityStaff() throws ParkingLotException {
         if(!parkingLotObserver.isCapacityNotFull()) return true;
+        else throw new ParkingLotException("parkingLot is not full");
+    }
+
+    public double timeTakenToSpaceAgain() throws ParkingLotException {
+        if(!parkingLotObserver.isCapacityNotFull())
+            return parkingLotObserver.timeLeftToSpaceAgain();
         else throw new ParkingLotException("parkingLot is not full");
     }
 }
