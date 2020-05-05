@@ -63,6 +63,6 @@ public class ParkingLotSystem {
             long[] time = parkingLotObserver.calculateFare(index);
             return time[0]*FARE_PER_DAYS+time[1]*FARE_PER_HOURS+time[2]*FARE_PER_MINUTES+time[3]*FARE_PER_SECOND;
         }
-        throw new ParkingLotException("vehicle not found");
+        else throw new ParkingLotException("vehicle not found");
     }
 }

@@ -12,9 +12,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLotSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/VehicleDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/VehicleDetails.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/bridgelabz/parkingLot/ParkingLotSpec.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/bridgelabz/parkingLot/ParkingLotSpec.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLotObserver.java" afterDir="false" />
@@ -33,7 +33,7 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="314" />
+    <option name="myElementSize" value="313" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -109,6 +109,11 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="verification" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ParkingLotDesign" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -148,7 +153,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -167,7 +172,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParkingLotSpec.givenVehicleDetails_WhenVehicleFound_UnParkAndReturnTotalFare">
+  <component name="RunManager" selected="JUnit.ParkingLotSpec">
     <configuration name="ParkingLotSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
@@ -183,7 +188,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParkingLotSpec.givenVehicleDetails_WhenVehicleFound_UnParkAndReturnTotalFare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParkingLotSpec.givenVehicleDetails_ToCalculateFare_WhenVehicleFound_UnParkAndReturnTotalFare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
         <pattern>
@@ -193,13 +198,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenVehicleDetails_WhenVehicleFound_UnParkAndReturnTotalFare" />
+      <option name="METHOD_NAME" value="givenVehicleDetails_ToCalculateFare_WhenVehicleFound_UnParkAndReturnTotalFare" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParkingLotSpec.givenVehicle_WhenParkingLotIsFull_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParkingLotSpec.givenVehicleDetails_ToCalculateFare_WhenVehicleNotFound_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
         <pattern>
@@ -209,13 +214,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenVehicle_WhenParkingLotIsFull_ShouldThrowException" />
+      <option name="METHOD_NAME" value="givenVehicleDetails_ToCalculateFare_WhenVehicleNotFound_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParkingLotSpec.givenVehicles_WhenParkingLotIsFull_ShouldReturnTrueToRedirectSecurityStaff" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParkingLotSpec.givenVehicles_WhenParkingLotIsFull_CheckPreviousVehicleToUnPark_IfTimeOver_ReturnVehicleAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
         <pattern>
@@ -225,13 +230,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenVehicles_WhenParkingLotIsFull_ShouldReturnTrueToRedirectSecurityStaff" />
+      <option name="METHOD_NAME" value="givenVehicles_WhenParkingLotIsFull_CheckPreviousVehicleToUnPark_IfTimeOver_ReturnVehicleAdded" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParkingLotSpec.givenVehicles_whenParkingLotIsFull_ShouldReturn_WhenParkingLot_HasSpaceAgain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParkingLotSpec.givenVehicles_WhenSameVehicleFound_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
         <pattern>
@@ -241,7 +246,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenVehicles_whenParkingLotIsFull_ShouldReturn_WhenParkingLot_HasSpaceAgain" />
+      <option name="METHOD_NAME" value="givenVehicles_WhenSameVehicleFound_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -249,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ParkingLotSpec.givenVehicleDetails_WhenVehicleFound_UnParkAndReturnTotalFare" />
-        <item itemvalue="JUnit.ParkingLotSpec.givenVehicles_whenParkingLotIsFull_ShouldReturn_WhenParkingLot_HasSpaceAgain" />
-        <item itemvalue="JUnit.ParkingLotSpec.givenVehicles_WhenParkingLotIsFull_ShouldReturnTrueToRedirectSecurityStaff" />
-        <item itemvalue="JUnit.ParkingLotSpec.givenVehicle_WhenParkingLotIsFull_ShouldThrowException" />
         <item itemvalue="JUnit.ParkingLotSpec" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicleDetails_ToCalculateFare_WhenVehicleNotFound_ShouldThrowException" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicles_WhenParkingLotIsFull_CheckPreviousVehicleToUnPark_IfTimeOver_ReturnVehicleAdded" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicles_WhenSameVehicleFound_ShouldThrowException" />
+        <item itemvalue="JUnit.ParkingLotSpec.givenVehicleDetails_ToCalculateFare_WhenVehicleFound_UnParkAndReturnTotalFare" />
       </list>
     </recent_temporary>
   </component>
@@ -285,7 +290,7 @@
       <workItem from="1588426623060" duration="10299000" />
       <workItem from="1588525153790" duration="29391000" />
       <workItem from="1588586707637" duration="14817000" />
-      <workItem from="1588679320174" duration="14630000" />
+      <workItem from="1588679320174" duration="23203000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />
@@ -308,7 +313,11 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ParkingLotDesign$ParkingLotSpec.ic" NAME="ParkingLotSpec Coverage Results" MODIFIED="1588626340964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ParkingLotDesign$ParkingLotSpec.ic" NAME="ParkingLotSpec Coverage Results" MODIFIED="1588716082770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bridgelabz.parkingLot.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ParkingLotDesign$ParkingLotSpec_givenVehicle_WhenUnParked_ShouldReturnTrue.ic" NAME="ParkingLotSpec.givenVehicle_WhenUnParked_ShouldReturnTrue Coverage Results" MODIFIED="1588709122471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ParkingLotDesign$ParkingLotSpec_givenVehicles_whenParkingLotIsFull_ShouldReturn_WhenParkingLot_HasSpaceAgain.ic" NAME="ParkingLotSpec.givenVehicles_whenParkingLotIsFull_ShouldReturn_WhenParkingLot_HasSpaceAgain Coverage Results" MODIFIED="1588710134569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.bridgelabz.parkingLot.*</FILTER>
     </SUITE>
   </component>

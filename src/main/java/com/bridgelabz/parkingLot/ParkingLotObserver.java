@@ -17,14 +17,6 @@ public class ParkingLotObserver {
         this.actualCapacity = value;
     }
 
-    public List<VehicleDetails> getListOfVehicle() {
-        return listOfVehicle;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
     /*------------------------------ VEHICLE DATA -------------------------------------*/
     void addVehicle(VehicleDetails vehicle) {
         if (listOfVehicle.size() < actualCapacity) {
@@ -33,10 +25,10 @@ public class ParkingLotObserver {
         }
     }
 /***************************************************************************************/
-void vehicleDataUpdate(VehicleDetails vehicle){
+    void vehicleDataUpdate(VehicleDetails vehicle){
         int count=0;
-        for(VehicleDetails v : listOfVehicle){
-            if((v.getEndTime()).compareTo(vehicle.getStartTime()) <= 0){
+        for(VehicleDetails v : listOfVehicle) {
+            if ((v.getEndTime()).compareTo(vehicle.getStartTime()) < 0) {
                 listOfVehicle.remove(count);
                 currentCapacity++;
             }
