@@ -1,40 +1,33 @@
 package com.bridgelabz.parkingLot;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingLotObserver {
     private int actualCapacity;
     private int currentCapacity;
-    private double currentTime;
-    private List<Vehicle> listOfVehicle = new ArrayList<>();
+    private int index = -1;
+    private final double parkingLotCharge_preHour = 5.60;
+    private List<VehicleDetails> listOfVehicle = new ArrayList<>();
 /*------------------------------ CONSTRUCTOR --------------------------------------*/
 
     void setActualCapacity(int value) {
         this.currentCapacity = value;
         this.actualCapacity = value;
     }
-
-    void setCurrentTime(double currentTime) {
-        this.currentTime = currentTime;
-    }
 /*------------------------------ VEHICLE DATA -------------------------------------*/
 
-    void addVehicle(Vehicle vehicle){
+    void addVehicle(VehicleDetails vehicle){
+//        boolean isUpdateRequired = vehicleDataUpdate(vehicle);
        if(listOfVehicle.size() < actualCapacity){
            listOfVehicle.add(vehicle);
            currentCapacity--;
        }
     }
 
-    void removeVehicle(Vehicle vehicle){
-        int index = -1 ,count = 0;
-        for(Vehicle isVehicle : listOfVehicle){
-            if(isVehicle.equals(vehicle)){
-                index = count;
-            }
-            count++;
-        }
+    void removeVehicle(VehicleDetails vehicle){
+        findVehicleDetails(vehicle);
         if(index >= 0 ) {
             listOfVehicle.remove(index);
             currentCapacity++;
@@ -45,24 +38,38 @@ public class ParkingLotObserver {
         return currentCapacity>0 && currentCapacity <= actualCapacity;
     }
 
-    boolean isVehicleAvailable(Vehicle vehicle) {
-        int index = -1, count = 0;
-        for (Vehicle isVehicle : listOfVehicle){
+    boolean isVehicleAvailable(VehicleDetails vehicle) {
+        findVehicleDetails(vehicle);
+        return index >= 0;
+    }
+
+    String timeLeftToSpaceAgain(String currentTime) throws ParseException {
+        String endTime = listOfVehicle.get(0).getEndTime();
+        for(VehicleDetails v : listOfVehicle){
+            if(endTime.compareTo(v.getEndTime())>0){
+                endTime = v.getEndTime();
+            }
+        }
+        return DateAndTime.timeDifference(currentTime, endTime);
+    }
+
+    private boolean vehicleDataUpdate(VehicleDetails vehicle){
+        for(VehicleDetails v : listOfVehicle){
+            if(v.getEndTime().compareTo(vehicle.getEndTime()) < 0 || v.getEndTime().compareTo(vehicle.getEndTime()) == 0){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    private void findVehicleDetails(VehicleDetails vehicle){
+        int count=0;
+        for (VehicleDetails isVehicle : listOfVehicle){
             if(isVehicle.equals(vehicle)) {
                 index = count;
             }
             count++;
         }
-        return index >= 0;
-    }
-
-    double timeLeftToSpaceAgain() {
-        double nearestTime = listOfVehicle.get(0).getEndTime();
-        for(Vehicle vehicleData : listOfVehicle){
-            if(nearestTime > vehicleData.getEndTime()){
-                nearestTime = vehicleData.getEndTime();
-            }
-        }
-        return nearestTime - currentTime;
     }
 }

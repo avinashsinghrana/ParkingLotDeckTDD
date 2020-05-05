@@ -1,23 +1,23 @@
 package com.bridgelabz.parkingLot;
 
-public class Vehicle {
-    private VehicleType vehicleType;
+public class VehicleDetails {
+    private VehicleDetails.VehicleType vehicleType;
     private String vehicleName;
     private String vehicleNumber;
-    private double startTime;
-    private double endTime;
+    private String startTime;
+    private String endTime;
 
     enum VehicleType{
         CAR;
     }
 /*------------------------------- CONSTRUCTOR ----------------------------------------------------*/
 
-    public Vehicle(VehicleType vehicleType, String vehicleName, String vehicleNumber) {
+    public VehicleDetails(VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber) {
         this.vehicleType = vehicleType;
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
     }
-    public Vehicle(VehicleType vehicleType, String vehicleName, String vehicleNumber, double startTime, double endTime) {
+    public VehicleDetails(VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber, String startTime, String endTime) {
         this.vehicleType = vehicleType;
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
@@ -25,11 +25,11 @@ public class Vehicle {
         this.endTime = endTime;
     }
 /*------------------------------------ getter --------------------------------------------*/
-    double getEndTime() {
+    String getEndTime() {
         return endTime;
     }
 
-    public VehicleType getVehicleType() {
+    public VehicleDetails.VehicleType getVehicleType() {
         return vehicleType;
     }
     /*----------------------------- EQUALS METHOD -------------------------------------------------*/
@@ -38,8 +38,8 @@ public class Vehicle {
     public boolean equals(Object o) {
         if (o == null) return false;
         if (this == o) return true;
-        if (!(o instanceof Vehicle)) return false;
-        Vehicle vehicle = (Vehicle) o;
+        if (!(o instanceof VehicleDetails)) return false;
+        VehicleDetails vehicle = (VehicleDetails) o;
         return vehicleName.equals(vehicle.vehicleName) &&
                 vehicleNumber.equals(vehicle.vehicleNumber);
     }
