@@ -32,6 +32,10 @@ public class VehicleDetails {
     public VehicleDetails.VehicleType getVehicleType() {
         return vehicleType;
     }
+
+    public String getStartTime() {
+        return startTime;
+    }
     /*----------------------------- EQUALS METHOD -------------------------------------------------*/
 
     @Override

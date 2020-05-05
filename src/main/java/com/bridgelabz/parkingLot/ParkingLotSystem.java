@@ -4,6 +4,10 @@ import java.text.ParseException;
 
 public class ParkingLotSystem {
     private ParkingLotObserver parkingLotObserver;
+    private static final double FARE_PER_SECOND = 0.01d;
+    private static final double FARE_PER_MINUTES = 0.18d;
+    private static final double FARE_PER_HOURS = 9.83d;
+    private static final double FARE_PER_DAYS = 200d;
     private ParkingArea parkingArea;
     public ParkingLotSystem() {
         parkingLotObserver = new ParkingLotObserver();
@@ -15,6 +19,7 @@ public class ParkingLotSystem {
     }
 
     public boolean park(VehicleDetails vehicle) throws ParkingLotException {
+        parkingLotObserver.vehicleDataUpdate(vehicle);
         boolean isCapacity = parkingLotObserver.isCapacityNotFull();
         boolean isAvailable = parkingLotObserver.isVehicleAvailable(vehicle);
         if(isCapacity && !isAvailable)
@@ -50,5 +55,14 @@ public class ParkingLotSystem {
 
     public boolean isVehicleAvailable(VehicleDetails vehicle) {
         return parkingLotObserver.isVehicleAvailable(vehicle);
+    }
+
+    public double calculateFare(VehicleDetails vehicle) throws ParseException, ParkingLotException {
+        int index = parkingLotObserver.findVehicleDetails(vehicle);
+        if(index >= 0){
+            long[] time = parkingLotObserver.calculateFare(index);
+            return time[0]*FARE_PER_DAYS+time[1]*FARE_PER_HOURS+time[2]*FARE_PER_MINUTES+time[3]*FARE_PER_SECOND;
+        }
+        throw new ParkingLotException("vehicle not found");
     }
 }

@@ -16,33 +16,51 @@ public class ParkingLotObserver {
         this.currentCapacity = value;
         this.actualCapacity = value;
     }
-/*------------------------------ VEHICLE DATA -------------------------------------*/
 
-    void addVehicle(VehicleDetails vehicle){
-//        boolean isUpdateRequired = vehicleDataUpdate(vehicle);
-       if(listOfVehicle.size() < actualCapacity){
-           listOfVehicle.add(vehicle);
-           currentCapacity--;
-       }
+    public List<VehicleDetails> getListOfVehicle() {
+        return listOfVehicle;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+    /*------------------------------ VEHICLE DATA -------------------------------------*/
+    void addVehicle(VehicleDetails vehicle) {
+        if (listOfVehicle.size() < actualCapacity) {
+            listOfVehicle.add(vehicle);
+            currentCapacity--;
+        }
+    }
+/***************************************************************************************/
+void vehicleDataUpdate(VehicleDetails vehicle){
+        int count=0;
+        for(VehicleDetails v : listOfVehicle){
+            if((v.getEndTime()).compareTo(vehicle.getStartTime()) <= 0){
+                listOfVehicle.remove(count);
+                currentCapacity++;
+            }
+            count++;
+        }
+    }
+/************************************************************************************/
     void removeVehicle(VehicleDetails vehicle){
         findVehicleDetails(vehicle);
-        if(index >= 0 ) {
+        if(index >= 0) {
             listOfVehicle.remove(index);
             currentCapacity++;
         }
     }
-
+/***********************************************************************************/
     boolean isCapacityNotFull() {
         return currentCapacity>0 && currentCapacity <= actualCapacity;
     }
-
+/************************************************************************************/
     boolean isVehicleAvailable(VehicleDetails vehicle) {
         findVehicleDetails(vehicle);
         return index >= 0;
     }
-
+/*************************************************************************************/
     String timeLeftToSpaceAgain(String currentTime) throws ParseException {
         String endTime = listOfVehicle.get(0).getEndTime();
         for(VehicleDetails v : listOfVehicle){
@@ -53,17 +71,8 @@ public class ParkingLotObserver {
         return DateAndTime.timeDifference(currentTime, endTime);
     }
 
-    private boolean vehicleDataUpdate(VehicleDetails vehicle){
-        for(VehicleDetails v : listOfVehicle){
-            if(v.getEndTime().compareTo(vehicle.getEndTime()) < 0 || v.getEndTime().compareTo(vehicle.getEndTime()) == 0){
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-    private void findVehicleDetails(VehicleDetails vehicle){
+    /*************************************************************************************/
+    public int findVehicleDetails(VehicleDetails vehicle){
         int count=0;
         for (VehicleDetails isVehicle : listOfVehicle){
             if(isVehicle.equals(vehicle)) {
@@ -71,5 +80,11 @@ public class ParkingLotObserver {
             }
             count++;
         }
+        return index;
+    }
+
+    public long[] calculateFare(int index) throws ParseException {
+        DateAndTime.timeDifference(listOfVehicle.get(index).getStartTime(),listOfVehicle.get(index).getEndTime());
+        return DateAndTime.timeDiff;
     }
 }
