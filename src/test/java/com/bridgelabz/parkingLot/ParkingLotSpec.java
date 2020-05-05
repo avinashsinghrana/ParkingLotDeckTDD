@@ -125,6 +125,6 @@ class ParkingLotSpec {
             parkingLotSystem.park(new VehicleDetails(VehicleDetails.VehicleType.CAR,"TOYOTA","MP01UT985","22/03/2020 08:15:52","22/03/2020 16:15:52"));
             boolean isVehicleAvailable = parkingLotSystem.isVehicleAvailable(new VehicleDetails(VehicleDetails.VehicleType.CAR, "SCORPIO", "BA02P9856"));
             assertTrue(isVehicleAvailable);
-        }catch (ParkingLotException e){ e.getMessage(); }
+        }catch (ParkingLotException e){ e.getMessage();}
     }
 }
