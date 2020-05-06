@@ -12,16 +12,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ParkingLotSpec {
     private ParkingLotSystem parkingLotSystem;
+    private ParkingAttendant parkingAttendant;
     private String date;
-    private VehicleDetails vehicle0 = new VehicleDetails(VehicleDetails.VehicleType.CAR, "honda", "MP04B4544", "22/03/2020 08:15:52", "22/03/2020 16:15:52");
-    private VehicleDetails vehicle1 = new VehicleDetails(VehicleDetails.VehicleType.CAR, "HERO", "MP04B9999", "22/03/2020 09:15:52", "22/03/2020 09:45:59");
-    private VehicleDetails vehicle2 = new VehicleDetails(VehicleDetails.VehicleType.CAR, "YAMAHA", "BR09B4854", "22/03/2020 06:18:52", "22/03/2020 23:35:32");
-    private VehicleDetails vehicle3 = new VehicleDetails(VehicleDetails.VehicleType.CAR, "SCORPIO", "BA02P9856", "22/03/2020 11:09:36", "22/03/2020 19:45:59");
-    private VehicleDetails vehicle4 = new VehicleDetails(VehicleDetails.VehicleType.CAR, "TOYOTA", "MP01UT985", "22/03/2020 12:23:24", "22/03/2020 16:15:52");
+    private VehicleDetails vehicle0 = new VehicleDetails(ParkingLotArea.DriverType.HANDICAP, VehicleDetails.VehicleType.CAR,
+            "honda", "MP04B4544", "22/03/2020 08:15:52", "22/03/2020 16:15:52");
+    private VehicleDetails vehicle1 = new VehicleDetails(ParkingLotArea.DriverType.NORMAL, VehicleDetails.VehicleType.CAR,
+            "HERO", "MP04B9999", "22/03/2020 09:15:52", "22/03/2020 09:45:59");
+    private VehicleDetails vehicle2 = new VehicleDetails(ParkingLotArea.DriverType.NORMAL, VehicleDetails.VehicleType.CAR,
+            "YAMAHA", "BR09B4854", "22/03/2020 06:18:52", "22/03/2020 23:35:32");
+    private VehicleDetails vehicle3 = new VehicleDetails(ParkingLotArea.DriverType.HANDICAP, VehicleDetails.VehicleType.CAR,
+            "SCORPIO", "BA02P9856", "22/03/2020 11:09:36", "22/03/2020 19:45:59");
+    private VehicleDetails vehicle4 = new VehicleDetails(ParkingLotArea.DriverType.NORMAL, VehicleDetails.VehicleType.CAR,
+            "TOYOTA", "MP01U8985", "22/03/2020 12:23:24", "22/03/2020 16:15:52");
 
     @BeforeEach
     void setUp() {
         parkingLotSystem = new ParkingLotSystem();
+        parkingAttendant = new ParkingAttendant();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         date = dateFormat.format(new Date());
     }
@@ -164,8 +171,8 @@ class ParkingLotSpec {
         try {
             parkingLotSystem.park(vehicle3);
             parkingLotSystem.park(vehicle4);
-            double totalFare = parkingLotSystem.calculateFare(new VehicleDetails(VehicleDetails.VehicleType.CAR, "SCORPIO", "BA02P9856"));
-            assertEquals(85.36,totalFare,0.1);
+            double totalFare = parkingLotSystem.calculateFare(vehicle3);
+            assertEquals(85.36, totalFare,0.1);
         } catch (ParkingLotException | ParseException e) {
             e.getMessage();
         }
@@ -176,11 +183,26 @@ class ParkingLotSpec {
             try {
                 parkingLotSystem.park(vehicle0);
                 parkingLotSystem.park(vehicle4);
-                double totalFare = parkingLotSystem.calculateFare(new VehicleDetails(VehicleDetails.VehicleType.CAR, "SCORPIO", "BA02P9856"));
+                double totalFare = parkingLotSystem.calculateFare(vehicle3);
                 assertEquals(85.36,totalFare,0.1);
             } catch (ParkingLotException | ParseException e) {
                 assertEquals("vehicle not found", e.getMessage());
             }
         }
 
+    @Test
+    void givenVehicles_DirectCarToCarParkingZone_WhenCarParked_ShouldReturnTrue() {
+        parkingLotSystem.setActualCapacity(5);
+        try{
+            parkingLotSystem.park(vehicle0);
+            parkingLotSystem.park(vehicle4);
+            parkingLotSystem.park(vehicle1);
+            parkingLotSystem.park(vehicle2);
+            parkingLotSystem.park(vehicle3);
+            boolean isAvailable = parkingAttendant.findVehicleInParkingLot(new VehicleDetails(ParkingLotArea.DriverType.HANDICAP, VehicleDetails.VehicleType.CAR, "SCORPIO", "BA02P9856"));
+            assertTrue(isAvailable);
+        }catch (ParkingLotException e) {
+            assertEquals("Vehicle not found", e.getMessage());
+        }
+    }
 }

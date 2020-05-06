@@ -6,32 +6,44 @@ public class VehicleDetails {
     private String vehicleNumber;
     private String startTime;
     private String endTime;
+    private ParkingLotArea.DriverType driverType;
 
     enum VehicleType{
         CAR;
     }
 /*------------------------------- CONSTRUCTOR ----------------------------------------------------*/
 
-    public VehicleDetails(VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber) {
+    public VehicleDetails(ParkingLotArea.DriverType driverType, VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber) {
+        this.driverType = driverType;
         this.vehicleType = vehicleType;
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
     }
-    public VehicleDetails(VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber, String startTime, String endTime) {
+
+    public VehicleDetails(ParkingLotArea.DriverType driverType, VehicleType vehicleType, String vehicleName, String vehicleNumber, String startTime, String endTime) {
+        this.driverType = driverType;
         this.vehicleType = vehicleType;
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
         this.startTime = startTime;
         this.endTime = endTime;
     }
-/*------------------------------------ getter --------------------------------------------*/
+
+    /*------------------------------------ getter --------------------------------------------*/
     String getEndTime() {
         return endTime;
     }
 
-
-    public String getStartTime() {
+    String getStartTime() {
         return startTime;
+    }
+
+    VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public ParkingLotArea.DriverType getDriverType() {
+        return driverType;
     }
     /*----------------------------- EQUALS METHOD -------------------------------------------------*/
 

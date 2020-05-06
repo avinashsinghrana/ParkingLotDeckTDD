@@ -8,7 +8,7 @@ public class ParkingLotSystem {
     private static final double FARE_PER_MINUTES = 0.18d;
     private static final double FARE_PER_HOURS = 9.83d;
     private static final double FARE_PER_DAYS = 200d;
-    private ParkingArea parkingArea;
+    private ParkingLotArea parkingLotArea;
     public ParkingLotSystem() {
         parkingLotObserver = new ParkingLotObserver();
     }
