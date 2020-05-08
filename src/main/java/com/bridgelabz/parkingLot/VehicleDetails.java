@@ -6,21 +6,21 @@ public class VehicleDetails {
     private String vehicleNumber;
     private String startTime;
     private String endTime;
-    private ParkingLotArea.DriverType driverType;
+    private ParkingSlot.DriverType driverType;
 
     enum VehicleType{
         CAR;
     }
 /*------------------------------- CONSTRUCTOR ----------------------------------------------------*/
 
-    public VehicleDetails(ParkingLotArea.DriverType driverType, VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber) {
+    public VehicleDetails(ParkingSlot.DriverType driverType, VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber) {
         this.driverType = driverType;
         this.vehicleType = vehicleType;
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
     }
 
-    public VehicleDetails(ParkingLotArea.DriverType driverType, VehicleType vehicleType, String vehicleName, String vehicleNumber, String startTime, String endTime) {
+    public VehicleDetails(ParkingSlot.DriverType driverType, VehicleType vehicleType, String vehicleName, String vehicleNumber, String startTime, String endTime) {
         this.driverType = driverType;
         this.vehicleType = vehicleType;
         this.vehicleName = vehicleName;
@@ -42,7 +42,7 @@ public class VehicleDetails {
         return vehicleType;
     }
 
-    public ParkingLotArea.DriverType getDriverType() {
+    public ParkingSlot.DriverType getDriverType() {
         return driverType;
     }
     /*----------------------------- EQUALS METHOD -------------------------------------------------*/
