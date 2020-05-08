@@ -9,7 +9,7 @@ public class VehicleDetails {
     private ParkingSlot.DriverType driverType;
 
     enum VehicleType{
-        CAR;
+        CAR,HEAVY_VEHICLE;
     }
 /*------------------------------- CONSTRUCTOR ----------------------------------------------------*/
 

@@ -12,13 +12,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingAttendant.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingAttendant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLot.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingLot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/ParkingSlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/VehicleDetails$VehicleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/bridgelabz/parkingLot/VehicleDetails$VehicleType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/bridgelabz/parkingLot/ParkingLotSpec.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/bridgelabz/parkingLot/ParkingLotSpec.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingAttendant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingAttendant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingLot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/ParkingSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/VehicleDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/parkingLot/VehicleDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bridgelabz/parkingLot/ParkingLotSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bridgelabz/parkingLot/ParkingLotSpec.java" afterDir="false" />
     </list>
     <list id="d7467046-0335-49a0-b0f6-f07d209a5120" name="Default Changelist" comment="" />
@@ -171,7 +170,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParkingLotSpec.givenVehicles_DirectCarToCarParkingZone_WhenCarParkedEvenDistributed_ShouldReturnTrue">
+  <component name="RunManager" selected="JUnit.ParkingLotSpec.givenLargeVehicle_WhenParkedToLargeNumberFreeSpacePark_ThenReturnParkNumber">
     <configuration name="ParkingLotSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
@@ -187,7 +186,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParkingLotSpec.givenVehicleDetails_ToCalculateFare_WhenVehicleNotFound_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParkingLotSpec.givenLargeVehicle_WhenParkedToLargeNumberFreeSpacePark_ThenReturnParkNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ParkingLotDesign.test" />
       <extension name="coverage">
         <pattern>
@@ -197,7 +196,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.bridgelabz.parkingLot" />
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.parkingLot.ParkingLotSpec" />
-      <option name="METHOD_NAME" value="givenVehicleDetails_ToCalculateFare_WhenVehicleNotFound_ShouldThrowException" />
+      <option name="METHOD_NAME" value="givenLargeVehicle_WhenParkedToLargeNumberFreeSpacePark_ThenReturnParkNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -253,11 +252,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParkingLotSpec.givenLargeVehicle_WhenParkedToLargeNumberFreeSpacePark_ThenReturnParkNumber" />
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicles_DirectCarToCarParkingZone_WhenCarParkedEvenDistributed_ShouldReturnTrue" />
         <item itemvalue="JUnit.ParkingLotSpec" />
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicles_DirectCarToCarParkingZone_WhenCarParked_ShouldReturnTrue" />
         <item itemvalue="JUnit.ParkingLotSpec.givenVehicles_whenParkingLotIsFull_ShouldReturn_WhenParkingLot_HasSpaceAgain" />
-        <item itemvalue="JUnit.ParkingLotSpec.givenVehicleDetails_ToCalculateFare_WhenVehicleNotFound_ShouldThrowException" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +290,7 @@
       <workItem from="1588586707637" duration="14817000" />
       <workItem from="1588679320174" duration="38621000" />
       <workItem from="1588824639267" duration="1911000" />
-      <workItem from="1588854514518" duration="28715000" />
+      <workItem from="1588854514518" duration="31282000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />

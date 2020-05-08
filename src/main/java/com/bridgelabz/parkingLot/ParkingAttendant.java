@@ -1,25 +1,18 @@
 package com.bridgelabz.parkingLot;
 
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class ParkingAttendant extends ParkingLot{
     public int parkingLotSequence;
 
     void addVehicle(VehicleDetails vehicle) {
-        for(int i = parkingLotSequence ; i < parkingLot.size() ; i++){
-            if(currentCapacity[i] == 0){
-                parkingLotSequence++;
-            }else break;
+        if(vehicle.getVehicleType() == VehicleDetails.VehicleType.CAR){
+            carParkingDistribution(vehicle);
         }
-        if (parkingLot.get(parkingLotSequence).getCarVehicle().size() < actualCapacity[parkingLotSequence] && currentCapacity[parkingLotSequence] > 0) {
-            parkingLot.get(parkingLotSequence).getCarVehicle().add(vehicle);
-            currentCapacity[parkingLotSequence]--;
+        else if(vehicle.getVehicleType() == VehicleDetails.VehicleType.HEAVY_VEHICLE){
+            largeVehicleParking(vehicle);
         }
-        parkingLotSequence++;
-        if(parkingLotSequence >= parkingLot.size()) parkingLotSequence = 0;
     }
     /***************************************************************************************/
     /*void vehicleDataUpdate(VehicleDetails vehicle){
@@ -64,20 +57,34 @@ public class ParkingAttendant extends ParkingLot{
         return -1;
     }
 
-    private int evenDistribution(){
-        ArrayList<Integer> indexFind = new ArrayList<>();
-        for(ParkingSlot p : parkingLot){
-            indexFind.add(p.getCarVehicle().size());
+    private void carParkingDistribution(VehicleDetails vehicle){
+        for(int i = parkingLotSequence ; i < parkingLot.size() ; i++){
+            if(currentCapacity[i] == 0){
+                parkingLotSequence++;
+            }else break;
         }
-        return indexFind.indexOf(Collections.min(indexFind));
+        if (parkingLot.get(parkingLotSequence).getCarVehicle().size() < actualCapacity[parkingLotSequence] && currentCapacity[parkingLotSequence] > 0) {
+            parkingLot.get(parkingLotSequence).getCarVehicle().add(vehicle);
+            currentCapacity[parkingLotSequence]--;
+        }
+        parkingLotSequence++;
+        if(parkingLotSequence >= parkingLot.size()) parkingLotSequence = 0;
     }
 
-    private int largeVehicleParking(){
-        ArrayList<Integer> indexFind = new ArrayList<>();
-        for(ParkingSlot p : parkingLot){
-            indexFind.add(p.getCarVehicle().size());
+    private void largeVehicleParking(VehicleDetails vehicle){
+        int maxSize = currentCapacity[0];
+        int parkingLotNumber = 0, count=0;
+        for(int size : currentCapacity){
+            if(maxSize < size) {
+                maxSize = size;
+                parkingLotNumber = count;
+            }
+            count++;
         }
-        return indexFind.indexOf(Collections.max(indexFind));
+        if(currentCapacity[parkingLotNumber] <= actualCapacity[parkingLotNumber] && currentCapacity[parkingLotNumber]>0){
+            parkingLot.get(parkingLotNumber).getCarVehicle().add(vehicle);
+            currentCapacity[parkingLotNumber]--;
+        }
     }
 
     boolean isVehicleAvailable(VehicleDetails vehicle) {
