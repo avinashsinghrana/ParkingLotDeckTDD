@@ -8,28 +8,27 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ParkingLotSpec {
     private ParkingLotSystem parkingLotSystem;
     private String date;
-    private VehicleDetails carVehicle1 = new VehicleDetails(ParkingSlot.DriverType.HANDICAP, VehicleDetails.VehicleType.CAR,
+    private VehicleDetails carVehicle1 = new VehicleDetails(ParkingSlot.DriverType.HANDICAP, VehicleDetails.VehicleType.CAR,VehicleDetails.VehicleColor.WHITE,
             "honda", "MP04B4544", "22/03/2020 08:15:52", "22/03/2020 16:15:52");
-    private VehicleDetails carVehicle2 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.CAR,
+    private VehicleDetails carVehicle2 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.CAR, VehicleDetails.VehicleColor.BLACK,
             "HERO", "MP04B9999", "22/03/2020 09:15:52", "22/03/2020 09:45:59");
-    private VehicleDetails carVehicle3 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.CAR,
+    private VehicleDetails carVehicle3 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.CAR, VehicleDetails.VehicleColor.WHITE,
             "YAMAHA", "BR09B4854", "22/03/2020 06:18:52", "22/03/2020 23:35:32");
-    private VehicleDetails carVehicle4 = new VehicleDetails(ParkingSlot.DriverType.HANDICAP, VehicleDetails.VehicleType.CAR,
+    private VehicleDetails carVehicle4 = new VehicleDetails(ParkingSlot.DriverType.HANDICAP, VehicleDetails.VehicleType.CAR,VehicleDetails.VehicleColor.BLACK,
             "SCORPIO", "BA02P9856", "22/03/2020 11:09:36", "22/03/2020 19:45:59");
-    private VehicleDetails carVehicle5 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.CAR,
+    private VehicleDetails carVehicle5 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.CAR, VehicleDetails.VehicleColor.WHITE,
             "TOYOTA", "MP01U8985", "22/03/2020 12:23:24", "22/03/2020 16:15:52");
     /**************************************************** HEAVY VEHICLE DETAIL **********************************************************************/
-    private VehicleDetails heavyVehicle1 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.HEAVY_VEHICLE,
+    private VehicleDetails heavyVehicle1 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.HEAVY_VEHICLE, VehicleDetails.VehicleColor.WHITE,
                 "ROLLER", "MP0TU8985", "26/03/2020 11:23:24", "28/03/2020 17:15:52");
-    private VehicleDetails heavyVehicle2 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.HEAVY_VEHICLE,
+    private VehicleDetails heavyVehicle2 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.HEAVY_VEHICLE, VehicleDetails.VehicleColor.BLACK,
                     "CRANE", "BR06M9885", "22/03/2020 05:06:04", "27/03/2020 13:10:00");
-    private VehicleDetails heavyVehicle3 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.HEAVY_VEHICLE,
+    private VehicleDetails heavyVehicle3 = new VehicleDetails(ParkingSlot.DriverType.NORMAL, VehicleDetails.VehicleType.HEAVY_VEHICLE, VehicleDetails.VehicleColor.WHITE,
                     "JCB", "UP0TU8879", "26/03/2020 09:09:09", "28/03/2020 23:29:01");
 
     @BeforeEach
@@ -249,6 +248,22 @@ class ParkingLotSpec {
             parkingLotSystem.park(heavyVehicle2);
             boolean isParked = parkingLotSystem.park(heavyVehicle3);
             assertTrue(isParked);
+            parkingLotSystem.print();
+        } catch (ParkingLotException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    void asPoliceGivenColorOfVehicle_WhenColorMatchedWithVehicle_ThenReturnParkNumberAndNumberOfWhiteCar() {
+        parkingLotSystem.createParkingLot(4, 1,2,1,5);
+        try{
+            parkingLotSystem.park(carVehicle1);
+            parkingLotSystem.park(carVehicle5);
+            parkingLotSystem.park(carVehicle2);
+            parkingLotSystem.park(carVehicle3);
+            parkingLotSystem.park(carVehicle4);
+            assertArrayEquals(new int[]{1, 1, 0, 1}, parkingLotSystem.findLocationOfVehicleByColor(VehicleDetails.VehicleColor.WHITE));
             parkingLotSystem.print();
         } catch (ParkingLotException e) {
             e.printStackTrace();

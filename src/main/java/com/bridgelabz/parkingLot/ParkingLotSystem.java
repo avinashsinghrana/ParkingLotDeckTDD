@@ -54,6 +54,18 @@ public class ParkingLotSystem  extends ParkingAttendant implements ParkingLotObs
         else throw new ParkingLotException("vehicle not found");
     }
 
+    int[] findLocationOfVehicleByColor(VehicleDetails.VehicleColor vehicleColor){
+        int[] locationAndNumberOfVehicles = new int[parkingLot.size()]; int index = 0;
+        for (ParkingSlot p : parkingLot){
+            int count = 0;
+            for(VehicleDetails v : p.getCarVehicle()){
+                if(v.getVehicleColor() == vehicleColor) count++;
+            }
+            locationAndNumberOfVehicles[index] = count;
+            index++;
+        }
+        return locationAndNumberOfVehicles;
+    }
 
     @Override
     public boolean isCapacityNotFull() {

@@ -7,9 +7,13 @@ public class VehicleDetails {
     private String startTime;
     private String endTime;
     private ParkingSlot.DriverType driverType;
+    private VehicleDetails.VehicleColor vehicleColor;
 
     enum VehicleType{
         CAR,HEAVY_VEHICLE;
+    }
+    enum VehicleColor{
+        WHITE,BLACK;
     }
 /*------------------------------- CONSTRUCTOR ----------------------------------------------------*/
 
@@ -20,9 +24,10 @@ public class VehicleDetails {
         this.vehicleNumber = vehicleNumber;
     }
 
-    public VehicleDetails(ParkingSlot.DriverType driverType, VehicleType vehicleType, String vehicleName, String vehicleNumber, String startTime, String endTime) {
+    public VehicleDetails(ParkingSlot.DriverType driverType, VehicleType vehicleType, VehicleColor vehicleColor, String vehicleName, String vehicleNumber, String startTime, String endTime) {
         this.driverType = driverType;
         this.vehicleType = vehicleType;
+        this.vehicleColor = vehicleColor;
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
         this.startTime = startTime;
@@ -40,6 +45,10 @@ public class VehicleDetails {
 
     VehicleType getVehicleType() {
         return vehicleType;
+    }
+
+    public VehicleColor getVehicleColor() {
+        return vehicleColor;
     }
 
     public ParkingSlot.DriverType getDriverType() {
