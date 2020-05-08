@@ -21,11 +21,8 @@ public class ParkingLot{
             number--;
         }
     }
-
 /*------------------------ GETTER AND SETTER --------------------------*/
     public List<ParkingSlot> getParkingLot() {
         return parkingLot;
     }
-
-
 }

@@ -2,16 +2,24 @@ package com.bridgelabz.parkingLot;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class ParkingAttendant extends ParkingLot{
+    public int parkingLotSequence;
 
     void addVehicle(VehicleDetails vehicle) {
-        int index = evenDistribution();
-        if (parkingLot.get(index).getCarVehicle().size() < actualCapacity[index]) {
-            parkingLot.get(index).getCarVehicle().add(vehicle);
-            currentCapacity[index]--;
+        for(int i = parkingLotSequence ; i < parkingLot.size() ; i++){
+            if(currentCapacity[i] == 0){
+                parkingLotSequence++;
+            }else break;
         }
+        if (parkingLot.get(parkingLotSequence).getCarVehicle().size() < actualCapacity[parkingLotSequence] && currentCapacity[parkingLotSequence] > 0) {
+            parkingLot.get(parkingLotSequence).getCarVehicle().add(vehicle);
+            currentCapacity[parkingLotSequence]--;
+        }
+        parkingLotSequence++;
+        if(parkingLotSequence >= parkingLot.size()) parkingLotSequence = 0;
     }
     /***************************************************************************************/
     /*void vehicleDataUpdate(VehicleDetails vehicle){
@@ -23,8 +31,8 @@ public class ParkingAttendant extends ParkingLot{
             }
             count++;
         }
-    }*/
-    /************************************************************************************/
+    }
+    /***************************************************************************************/
     void removeVehicle(VehicleDetails vehicle){
         int parkingPlotNumber = findParkingPlotNumber(vehicle);
         int parkingSlotNumber = findParkingSlotNumber(vehicle, parkingPlotNumber);
@@ -56,7 +64,6 @@ public class ParkingAttendant extends ParkingLot{
         return -1;
     }
 
-    /***********************************************************************************/
     private int evenDistribution(){
         ArrayList<Integer> indexFind = new ArrayList<>();
         for(ParkingSlot p : parkingLot){
@@ -73,12 +80,11 @@ public class ParkingAttendant extends ParkingLot{
         return indexFind.indexOf(Collections.max(indexFind));
     }
 
-    /************************************************************************************/
     boolean isVehicleAvailable(VehicleDetails vehicle) {
         int parkingPlotNumber = findParkingPlotNumber(vehicle);
         return parkingPlotNumber >= 0;
     }
-    /*************************************************************************************/
+
     String timeLeftToSpaceAgain(String currentTime) throws ParseException {
         int parkingLotNumber = 0;
         int parkingSlotNumber = 0;
@@ -101,5 +107,11 @@ public class ParkingAttendant extends ParkingLot{
             if(v.equals(vehicle)) return true;
         }
         return false;
+    }
+    void print(){
+        for (ParkingSlot p : parkingLot){
+            System.out.println("size of parking lot " + p.getCarVehicle().size());
+            System.out.println("currentCapacity = " + Arrays.toString(currentCapacity));
+        }
     }
 }

@@ -212,4 +212,20 @@ class ParkingLotSpec {
             assertEquals("Vehicle not found", e.getMessage());
         }
     }
+
+    @Test
+    void givenVehicles_DirectCarToCarParkingZone_WhenCarParkedEvenDistributed_ShouldReturnTrue() {
+        parkingLotSystem.createParkingLot(3,1,1,3);
+
+        try{
+            parkingLotSystem.park(vehicle0);
+            parkingLotSystem.park(vehicle4);
+            parkingLotSystem.park(vehicle1);
+            parkingLotSystem.park(vehicle2);
+            parkingLotSystem.park(vehicle3);
+            parkingLotSystem.print();
+        }catch (ParkingLotException e) {
+            assertEquals("Vehicle not found", e.getMessage());
+        }
+    }
 }

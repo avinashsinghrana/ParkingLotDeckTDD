@@ -7,7 +7,6 @@ public class ParkingSlot {
     enum DriverType{
         NORMAL, HANDICAP;
     }
-
     private List<VehicleDetails> carVehicle;
 
     public ParkingSlot() {
