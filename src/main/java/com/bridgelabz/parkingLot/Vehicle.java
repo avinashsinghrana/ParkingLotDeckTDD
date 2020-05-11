@@ -1,34 +1,37 @@
 package com.bridgelabz.parkingLot;
 
-public class VehicleDetails {
-    private VehicleDetails.VehicleType vehicleType;
-    private String vehicleName;
+public class Vehicle {
+    private Vehicle.VehicleType vehicleType;
     private String vehicleNumber;
     private String startTime;
     private String endTime;
     private ParkingSlot.DriverType driverType;
-    private VehicleDetails.VehicleColor vehicleColor;
+    public VehicleType.ModelType modelType;
+    private Vehicle.VehicleColor vehicleColor;
 
     enum VehicleType{
         CAR,HEAVY_VEHICLE;
+        enum ModelType{
+            BMW(0),TOYOTA(1),JCB(2),CRANE(3),ROLLER(4);
+            ModelType(int i) { }
+        }
     }
     enum VehicleColor{
-        WHITE,BLACK;
+        WHITE(0),BLUE(1);
+        VehicleColor(int i) { }
     }
 /*------------------------------- CONSTRUCTOR ----------------------------------------------------*/
 
-    public VehicleDetails(ParkingSlot.DriverType driverType, VehicleDetails.VehicleType vehicleType, String vehicleName, String vehicleNumber) {
+    public Vehicle(ParkingSlot.DriverType driverType, Vehicle.VehicleType vehicleType, String vehicleNumber) {
         this.driverType = driverType;
         this.vehicleType = vehicleType;
-        this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
     }
-
-    public VehicleDetails(ParkingSlot.DriverType driverType, VehicleType vehicleType, VehicleColor vehicleColor, String vehicleName, String vehicleNumber, String startTime, String endTime) {
+    public Vehicle(ParkingSlot.DriverType driverType, VehicleType vehicleType, VehicleType.ModelType modelType, VehicleColor vehicleColor, String vehicleNumber, String startTime, String endTime) {
         this.driverType = driverType;
         this.vehicleType = vehicleType;
+        this.modelType = modelType;
         this.vehicleColor = vehicleColor;
-        this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -51,6 +54,14 @@ public class VehicleDetails {
         return vehicleColor;
     }
 
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public VehicleType.ModelType getModelType() {
+        return modelType;
+    }
+
     public ParkingSlot.DriverType getDriverType() {
         return driverType;
     }
@@ -60,9 +71,8 @@ public class VehicleDetails {
     public boolean equals(Object o) {
         if (o == null) return false;
         if (this == o) return true;
-        if (!(o instanceof VehicleDetails)) return false;
-        VehicleDetails vehicle = (VehicleDetails) o;
-        return vehicleName.equals(vehicle.vehicleName) &&
-                vehicleNumber.equals(vehicle.vehicleNumber);
+        if (!(o instanceof Vehicle)) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return vehicleNumber.equals(vehicle.vehicleNumber);
     }
 }

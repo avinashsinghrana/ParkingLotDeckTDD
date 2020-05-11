@@ -1,32 +1,33 @@
 package com.bridgelabz.parkingLot;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class ParkingAttendant extends ParkingLot{
     public int parkingLotSequence;
+    public String[] attendantName;
+    public HashMap<String, List<ParkingSlot>> attendantProfile = new HashMap<>();
 
-    void addVehicle(VehicleDetails vehicle) {
-        if(vehicle.getVehicleType() == VehicleDetails.VehicleType.CAR){
+    public void setAttendantName(String... attendantName) {
+        this.attendantName = attendantName;
+        for (int i = 0 ; i < parkingLot.size() ; i++){
+            attendantProfile.put(attendantName[i], getParkingLot());
+        }
+    }
+
+    void addVehicle(Vehicle vehicle) {
+        if(vehicle.getVehicleType() == Vehicle.VehicleType.CAR){
             carParkingDistribution(vehicle);
         }
-        else if(vehicle.getVehicleType() == VehicleDetails.VehicleType.HEAVY_VEHICLE){
+        else if(vehicle.getVehicleType() == Vehicle.VehicleType.HEAVY_VEHICLE){
             largeVehicleParking(vehicle);
         }
     }
-    /***************************************************************************************/
-    /*void vehicleDataUpdate(VehicleDetails vehicle){
-        int count=0;
-        for(VehicleDetails v : parkingLot.get(index).getCarVehicle()) {
-            if ((v.getEndTime()).compareTo(vehicle.getStartTime()) < 0) {
-                parkingLot.get(index).getCarVehicle().remove(count);
-                currentCapacity[index]++;
-            }
-            count++;
-        }
-    }
-    /***************************************************************************************/
-    void removeVehicle(VehicleDetails vehicle){
+
+    void removeVehicle(Vehicle vehicle){
         int parkingPlotNumber = findParkingPlotNumber(vehicle);
         int parkingSlotNumber = findParkingSlotNumber(vehicle, parkingPlotNumber);
         if(parkingSlotNumber >= 0) {
@@ -35,9 +36,9 @@ public class ParkingAttendant extends ParkingLot{
         }
     }
 
-    public int findParkingSlotNumber(VehicleDetails vehicle, int parkingPlotNumber) {
+    public int findParkingSlotNumber(Vehicle vehicle, int parkingPlotNumber) {
         int count=0;
-        for (VehicleDetails isVehicle : parkingLot.get(parkingPlotNumber).getCarVehicle()){
+        for (Vehicle isVehicle : parkingLot.get(parkingPlotNumber).getCarVehicle()){
             if(isVehicle.equals(vehicle)) {
                 return count;
             }
@@ -46,10 +47,10 @@ public class ParkingAttendant extends ParkingLot{
         return -1;
     }
 
-    int findParkingPlotNumber(VehicleDetails vehicle) {
+    int findParkingPlotNumber(Vehicle vehicle) {
         int count = 0 ;
         for(ParkingSlot p : parkingLot){
-            for(VehicleDetails v : p.getCarVehicle()){
+            for(Vehicle v : p.getCarVehicle()){
                 if (v.equals(vehicle)) return count;
             }
             count++;
@@ -57,7 +58,7 @@ public class ParkingAttendant extends ParkingLot{
         return -1;
     }
 
-    private void carParkingDistribution(VehicleDetails vehicle){
+    private void carParkingDistribution(Vehicle vehicle){
         for(int i = parkingLotSequence ; i < parkingLot.size() ; i++){
             if(currentCapacity[i] == 0){
                 parkingLotSequence++;
@@ -71,7 +72,7 @@ public class ParkingAttendant extends ParkingLot{
         if(parkingLotSequence >= parkingLot.size()) parkingLotSequence = 0;
     }
 
-    private void largeVehicleParking(VehicleDetails vehicle){
+    private void largeVehicleParking(Vehicle vehicle){
         int maxSize = currentCapacity[0];
         int parkingLotNumber = 0, count=0;
         for(int size : currentCapacity){
@@ -87,7 +88,7 @@ public class ParkingAttendant extends ParkingLot{
         }
     }
 
-    boolean isVehicleAvailable(VehicleDetails vehicle) {
+    boolean isVehicleAvailable(Vehicle vehicle) {
         int parkingPlotNumber = findParkingPlotNumber(vehicle);
         return parkingPlotNumber >= 0;
     }
@@ -97,7 +98,7 @@ public class ParkingAttendant extends ParkingLot{
         int parkingSlotNumber = 0;
         String endTime = parkingLot.get(parkingLotNumber).getCarVehicle().get(parkingSlotNumber).getEndTime();
         for(ParkingSlot p : parkingLot){
-            for(VehicleDetails v : p.getCarVehicle()){ if(endTime.compareTo(v.getEndTime())>0) endTime = v.getEndTime();}
+            for(Vehicle v : p.getCarVehicle()){ if(endTime.compareTo(v.getEndTime())>0) endTime = v.getEndTime();}
         }
         return DateAndTime.timeDifference(currentTime, endTime);
     }
@@ -108,9 +109,9 @@ public class ParkingAttendant extends ParkingLot{
         return DateAndTime.timeDiff;
     }
 
-    public boolean findVehicleInParkingLot(VehicleDetails vehicle) {
+    public boolean findVehicleInParkingLot(Vehicle vehicle) {
         int parkingPlotNumber = findParkingPlotNumber(vehicle);
-        for(VehicleDetails v : parkingLot.get(parkingPlotNumber).getCarVehicle()){
+        for(Vehicle v : parkingLot.get(parkingPlotNumber).getCarVehicle()){
             if(v.equals(vehicle)) return true;
         }
         return false;
@@ -120,5 +121,19 @@ public class ParkingAttendant extends ParkingLot{
             System.out.println("size of parking lot " + p.getCarVehicle().size());
             System.out.println("currentCapacity = " + Arrays.toString(currentCapacity));
         }
+    }
+
+    public List<String> findAllVehicleWithinGivenTime(String currentTime) throws ParseException {
+        List<String> vehicleNumber = new ArrayList<>();
+        for(ParkingSlot p : parkingLot){
+            for(Vehicle v : p.getCarVehicle()){
+                DateAndTime.timeDifference(v.getStartTime(),currentTime);
+                long[] time = DateAndTime.getTimeDiff();
+                long parkedBefore = (time[0]*24*60)+(time[1]*60)+time[2];
+                System.out.println("parkedBefore = " + parkedBefore);
+                if(parkedBefore <= 30 && parkedBefore >= 0) vehicleNumber.add(v.getModelType()+" "+v.getVehicleNumber());
+            }
+        }
+        return vehicleNumber;
     }
 }

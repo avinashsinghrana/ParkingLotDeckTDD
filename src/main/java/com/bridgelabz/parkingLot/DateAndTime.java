@@ -13,6 +13,10 @@ public class DateAndTime {
 
 /*---------------------------- time difference -------------------------------------*/
 
+    public static long[] getTimeDiff() {
+        return timeDiff;
+    }
+
     static String timeDifference(String start, String end) throws ParseException {
         Date dStart = dateFormat.parse(start);
         Date dEnd = dateFormat.parse(end);

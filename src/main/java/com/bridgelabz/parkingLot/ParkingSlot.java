@@ -7,12 +7,12 @@ public class ParkingSlot {
     enum DriverType{
         NORMAL, HANDICAP;
     }
-    private List<VehicleDetails> carVehicle;
+    private List<Vehicle> carVehicle;
 
     public ParkingSlot() {
         carVehicle = new ArrayList<>();
     }
-    public List<VehicleDetails> getCarVehicle() {
+    public List<Vehicle> getCarVehicle() {
         return carVehicle;
     }
 }
