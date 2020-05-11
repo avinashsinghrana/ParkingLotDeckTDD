@@ -112,4 +112,8 @@ public class ParkingLotSystem  extends ParkingAttendant implements ParkingLotObs
         }
         return attendant;
     }
+
+    public boolean isFraudVehicleParked(Vehicle vehicle) {
+        return isVehicleAvailable(vehicle);
+    }
 }

@@ -22,6 +22,10 @@ public class Vehicle {
     }
 /*------------------------------- CONSTRUCTOR ----------------------------------------------------*/
 
+    public Vehicle(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
+    }
+
     public Vehicle(ParkingSlot.DriverType driverType, Vehicle.VehicleType vehicleType, String vehicleNumber) {
         this.driverType = driverType;
         this.vehicleType = vehicleType;

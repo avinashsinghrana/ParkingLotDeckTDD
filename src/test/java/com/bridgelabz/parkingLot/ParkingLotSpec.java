@@ -331,9 +331,8 @@ class ParkingLotSpec {
         }
     }
 
-
     @Test
-    void findVehicle() {
+    void givenVehicleNumber_VerifyTheVehicleAsFraudNumber_ShouldReturn() {
         parkingLotSystem.createParkingLot(3, 2, 5, 3);
         try {
             parkingLotSystem.park(carVehicle1);
@@ -344,12 +343,9 @@ class ParkingLotSpec {
             parkingLotSystem.park(carVehicle6);
             parkingLotSystem.park(carVehicle7);
             parkingLotSystem.park(carVehicle8);
-            parkingLotSystem.print();
-            int count = parkingLotSystem.findParkingPlotNumber(carVehicle5);
-            System.out.println("count = " + count);
+            assertTrue(parkingLotSystem.isFraudVehicleParked(new Vehicle("MP04B4544")));
         } catch (ParkingLotException e) {
             e.printStackTrace();
         }
     }
-
 }
